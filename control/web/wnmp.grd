@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grit current_release="1" latest_public_release="0">
+  <outputs>
+    <output filename="web_resources.json" type="rc_header">
+      <emit emit_type="prepend"/>
+    </output>
+    <output filename="wnmp.pak" type="data_package"/>
+  </outputs>
+  <release seq="1">
+    <includes>
+      <include file="control.html" name="CONTROL_HTML" type="html"/>
+      <include file="css/main.css" name="CSS_MAIN_CSS" type="css"/>
+      <include file="image/load.gif" name="IMAGE_LOAD_GIF" type="gif"/>
+      <include file="js/jquery.js" name="JS_JQUERY_JS" type="js"/>
+    </includes>
+  </release>
+</grit>

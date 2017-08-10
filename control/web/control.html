@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Wnmp Control Panel</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style type="text/css">
+		.btn {
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
+
+		#panel {
+		}
+
+		#panel-table {
+			width: 100%;
+			border: 0;
+			border-bottom: 1px solid #999;
+			display: inline-block;
+			padding: 0.6em 0.6em;
+			box-sizing: border-box;
+		}
+
+		#panel-table > thead > tr:first-child {
+			font-size: 80%;
+		}
+
+		#panel-table > thead > tr > th:first-child {
+			width: 10em;
+		}
+
+		#panel-table > thead > tr > th:nth-child(2) {
+			width: 16em;
+		}
+
+		#panel-table > tbody > tr {
+			text-align: center;
+			height: 2em;
+		}
+
+		#panel-table tr > td,
+		#panel-table tr > th {
+			text-align: left;
+		}
+
+		#console {
+			height: 18em;
+			border: 0;
+			border-bottom: 1px solid #999;
+			overflow: auto;
+			padding: 0 1em;
+		}
+
+		#console .console-line {
+			line-height: 1.4em;
+			font-size: 90%;
+			padding: 0.5em 0;
+		}
+
+		.loadding {
+			background: url('image/load.gif');
+			width: 1em;
+			height: 1em;
+			display: inline-block;
+			background-size: cover
+		}
+
+		.running {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			border-radius: 1em;
+			background: green;
+			vertical-align: middle;
+		}
+
+		.stopping {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			border-radius: 1em;
+			background: red;
+			vertical-align: middle;
+		}
+
+		.menu-box {
+			border: 0;
+			border-bottom: 1px solid #999;
+		}
+
+		.menu-box .dropdown-menu {
+			margin: 0;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
+
+		.menu-box .btn {
+			border: 0;
+		}
+
+	</style>
+</head>
+
+<body>
+<header class="menu-box">
+	<div class="btn-group" role="group">
+		<div class="dropdown btn-group" role="group">
+			<button type="button" class="btn btn-default dropdown-toggle">
+				Wnmp&nbsp;<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a>Setting</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div id="panel">
+	<table id="panel-table">
+		<thead>
+		<tr>
+			<th>Application</th>
+			<th>Running</th>
+			<th>Action</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Nginx</td>
+			<td id="nginx-running"><i class="stopping"></i> Stopping</td>
+			<td>
+				<button class="btn btn-default" id="nginx-start">Start</button>
+				<button class="btn btn-default" id="nginx-stop">Stop</button>
+				<button class="btn btn-default" id="nginx-restart">Restart</button>
+				<button class="btn btn-default" id="nginx-test">Test Conf</button>
+			</td>
+		</tr>
+		<tr>
+			<td>PHP</td>
+			<td id="php-running"><i class="stopping"></i> Stopping</td>
+			<td>
+				<button class="btn btn-default" id="php-start">Start</button>
+				<button class="btn btn-default" id="php-stop">Stop</button>
+				<button class="btn btn-default" id="php-restart">Restart</button>
+			</td>
+		</tr>
+		<tr>
+			<td>Mysql</td>
+			<td id="mysql-running"><i class="stopping"></i> Stopping</td>
+			<td>
+				<button class="btn btn-default" id="mysql-start">Start</button>
+				<button class="btn btn-default" id="mysql-stop">Stop</button>
+				<button class="btn btn-default" id="mysql-restart">Restart</button>
+				<button class="btn btn-default" id="mysql-cmd">Cmd</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div id="console">
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	function _initDropDown() {
+		var _hide = function () {
+			$('.dropdown').removeClass('open');
+		};
+
+		$('.dropdown-toggle').on('click', function () {
+			if ($(this).parent().hasClass('open')) {
+				$(this).parent().removeClass('open');
+			} else {
+				$(this).parent().addClass('open');
+			}
+		});
+
+		$('body').on('keyup click', function (e) {
+			e = e || window.event;
+			// esc
+			if (e.keyCode === 27) {
+				_hide();
+			}
+		}).on('click', function (e) {
+			e = e || window.event;
+			var _target = e.srcElement || e.target;
+			if ($(_target).closest('.dropdown').length <= 0) {
+				_hide();
+			}
+		});
+
+		$('.dropdown-menu>li').on('click', function () {
+			_hide();
+		})
+
+	}
+
+	$(function () {
+		_initDropDown();
+	})
+</script>
+
+<script type="text/javascript">
+	var _exec = require('child_process').exec;
+	var path = require('path');
+	var rootPath = path.dirname(hex.applicationDirectoryPath);
+	var iniFilePath = hex.applicationDirectoryPath + '/wnmp.ini';
+
+	var phpDir = 'php';
+	var phpVersion = 'php-5.6.10';
+	var phpPort = 9001;
+	var phpBin = 'php-cgi.exe';
+	var phpProcessCount = 10;
+
+	var nginxDir = 'nginx';
+	var nginxBin = 'nginx.exe';
+
+	var mysqlDir = 'mariadb';
+	var mysqlBin = 'mysqld.exe';
+
+	var nginxPath = rootPath + '/' + nginxDir;
+	var phpPath = rootPath + '/' + phpDir + '/' + phpVersion;
+	var phpProcessConf = nginxPath + '/conf/php_processes.conf';
+	var mysqlPath = rootPath + '/' + mysqlDir;
+
+	var nginxStartCmd = rootPath + '/bin/RunHiddenConsole.exe ' + nginxPath + '/' + nginxBin + ' -p ' + nginxPath;
+	var nginxStopCmd = 'taskkill /F /IM ' + nginxBin + ' > nul';
+	var nginxTestCmd = nginxPath + '/' + nginxBin + ' -p ' + nginxPath + ' -c ' + nginxPath + '/conf/nginx.conf -t'
+	var phpStartCmd = rootPath + '/bin/RunHiddenConsole.exe ' + phpPath + '/' + phpBin + ' -b 127.0.0.1:%port% -c ' + phpPath + '/php.ini';
+	var phpStopCmd = 'taskkill /F /IM ' + phpBin + ' > nul';
+	var mysqlStartCmd = rootPath + '/bin/RunHiddenConsole.exe ' + mysqlPath + '/bin/' + mysqlBin + ' --defaults-file=' + mysqlPath + '/my.ini --standalone';
+	var mysqlStopCmd = 'taskkill /F /IM ' + mysqlBin + ' > nul';
+	var mysqlCmd = 'start ' + mysqlPath + '/bin/mysql.exe -u root -p';
+
+	var _ini = new INI();
+
+	function INI() {
+		this.sections = {};
+	}
+
+	/**
+	 * 删除Section
+	 * @param sectionName
+	 */
+	INI.prototype.removeSection = function (sectionName) {
+
+		sectionName = sectionName.replace(/\[/g, '(');
+		sectionName = sectionName.replace(/]/g, ')');
+
+		if (this.sections[sectionName]) {
+			delete this.sections[sectionName];
+		}
+	};
+
+	/**
+	 * 创建或者得到某个Section
+	 * @type {Function}
+	 */
+	INI.prototype.getOrCreateSection = INI.prototype.section = function (sectionName) {
+
+		sectionName = sectionName.replace(/\[/g, '(');
+		sectionName = sectionName.replace(/]/g, ')');
+
+		if (!this.sections[sectionName]) {
+			this.sections[sectionName] = {};
+		}
+		return this.sections[sectionName]
+	};
+
+	/**
+	 * 将INI转换成文本
+	 *
+	 * @returns {string}
+	 */
+	INI.prototype.encodeToIni = INI.prototype.toString = function encodeIni() {
+		var _INI = this;
+		var sectionOut = _INI.encodeSection(null, _INI);
+		Object.keys(_INI.sections).forEach(function (k, _, __) {
+			if (_INI.sections) {
+				sectionOut += _INI.encodeSection(k, _INI.sections[k])
+			}
+		});
+		return sectionOut;
+	};
+
+	/**
+	 *
+	 * @param section
+	 * @param obj
+	 * @returns {string}
+	 */
+	INI.prototype.encodeSection = function (section, obj) {
+		var out = "";
+		Object.keys(obj).forEach(function (k, _, __) {
+			var val = obj[k];
+			if (val && Array.isArray(val)) {
+				val.forEach(function (item) {
+					out += safe(k + "[]") + " = " + safe(item) + "\n"
+				})
+			} else if (val && typeof val === "object") {
+			} else {
+				out += safe(k) + " = " + safe(val) + eol
+			}
+		});
+		if (section && out.length) {
+			out = "[" + safe(section) + "]" + eol + out
+		}
+		return out + "\n";
+	};
+
+	function _parseInI(filepath) {
+		var regex = {
+			section: /^\s*\[\s*([^\]]*)\s*\]\s*$/,
+			param: /^\s*([\w\.\-\_]+)\s*=\s*(.*?)\s*$/,
+			comment: /^\s*;.*$/
+		};
+		var fs = require("fs");
+		var data = fs.readFileSync(filepath, 'utf-8');
+		var lines = data.split(/\r\n|\r|\n/);
+		var section = null;
+		lines.forEach(function (line) {
+			if (regex.comment.test(line)) {
+				return;
+			} else if (regex.param.test(line)) {
+				var match = line.match(regex.param);
+				if (section) {
+					section[match[1]] = match[2];
+				} else {
+					_ini[match[1]] = match[2];
+				}
+			} else if (regex.section.test(line)) {
+				var match = line.match(regex.section);
+				section = _ini.getOrCreateSection(match[1])
+			} else if (line.length === 0 && section) {
+				section = null;
+			}
+		});
+
+	}
+
+	function _loadInI() {
+		_parseInI(iniFilePath);
+		phpVersion = _ini.sections.php.version || "php-5.6.30";
+		phpPort = parseInt(_ini.sections.php.port) || 9001;
+		phpProcessCount = parseInt(_ini.sections.php.process) || 10;
+
+		phpPath = rootPath + '/' + phpDir + '/' + phpVersion;
+	}
+
+
+	function _checkProcess(processName, _callback) {
+		var cmd = 'tasklist /nh /fi "imagename eq ' + processName;
+		_exec(cmd, _callback);
+	}
+
+
+	function _formatDate(_dt) {
+		_dt = _dt || new Date();
+
+		var _format = function (num, len) {
+			var _len = ('' + num).length;
+			if (((num < 10) || (num < 100) || (num < 1000)) && _len < len) {
+
+				num = (function (n) {
+						var _str = '';
+						for (var i = 0; i < n; i++) {
+							_str += '0';
+						}
+						return _str;
+					})(len - _len) + num;
+			}
+			return num;
+		};
+
+		return _format(_dt.getFullYear(), 4) + '-' + _format(_dt.getMonth() + 1, 2) + '-' + _format(_dt.getDate(), 2) + ' ' + _format(_dt.getHours(), 2) + ':' + _format(_dt.getMinutes(), 2) + ':' + _format(_dt.getSeconds(), 2) + '.' + _format(_dt.getMilliseconds(), 3)
+
+	}
+
+	function _console(_msg, _warp) {
+		var _dt = new Date();
+		_warp = typeof _warp !== 'undefined' ? _warp : true;
+		_msg = typeof _msg === 'object' ? JSON.stringify(_msg) : _msg;
+		_msg = _msg || '';
+		_msg = _warp ? '[' + _formatDate() + '] ' + _msg : _msg;
+		var span = document.createElement('span');
+		span.className = 'console-line';
+		span.innerText = _msg;
+		document.getElementById('console').appendChild(span);
+		if (_warp) {
+			var br = document.createElement('br');
+			document.getElementById('console').appendChild(br);
+		}
+		document.getElementById('console').scrollTop = document.getElementById('console').scrollHeight;
+	}
+
+	function _stat(_id, _stat) {
+		if (_stat === 'stop') {
+			document.getElementById(_id).innerHTML = '<i class="running"></i> Stopping';
+		} else if (_stat === 'run') {
+			document.getElementById(_id).innerHTML = '<i class="running"></i> Running';
+		} else {
+			document.getElementById(_id).innerHTML = '<i class="loadding"></i>';
+		}
+	}
+
+	function _nginxStartBtn(e) {
+		_checkProcess(nginxBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (!stdout.match(nginxBin)) {
+				_stat('nginx-running', 'load');
+				_exec(nginxStartCmd, function (err, stdout, stderr) {
+					if (err) {
+						return _console(err);
+					}
+					_console('Starting Nginx OK');
+					_checkNginxProcess();
+				});
+			} else {
+				_console('Nginx is starting');
+			}
+		})
+	}
+
+	function _nginxStopBtn(e) {
+		_checkProcess(nginxBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(nginxBin)) {
+				_stat('nginx-running', 'load');
+				_exec(nginxStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_console('Stopping Nginx OK');
+						_checkNginxProcess();
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_console('Nginx is stopping');
+			}
+		})
+	}
+
+	function _nginxRestartBtn(e) {
+		_checkProcess(nginxBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			_stat('nginx-running', 'load');
+			if (stdout.match(nginxBin)) {
+				_exec(nginxStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_exec(nginxStartCmd, function (err, stdout, stderr) {
+							_console('Restarting Nginx OK');
+							_checkNginxProcess();
+						});
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_exec(nginxStartCmd, function (err, stdout, stderr) {
+					_console('Restarting Nginx OK');
+					_checkNginxProcess();
+				});
+			}
+		})
+	}
+
+	function _nginxTestBtn(e) {
+		_console('Test nginx config file');
+		_exec(nginxTestCmd, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			_console(stdout + '\r\n' + stderr);
+		});
+	}
+
+	function _phpStartBtn() {
+		_checkProcess(phpBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (!stdout.match(phpBin)) {
+				var fs = require('fs');
+				_stat('php-running', 'load');
+				var _server = 'upstream php_processes {';
+				for (var i = 0; i < phpProcessCount; i++) {
+					var port = phpPort + i;
+					var cmd = phpStartCmd.replace(/%port%/g, port);
+					_server += '\r\n    server 127.0.0.1:' + port + ' max_fails=1 fail_timeout=3s weight=1;'
+					_exec(cmd, function (err, stdout, stderr) {
+						if (err) {
+							return _console(err);
+						}
+					});
+				}
+				_server += '\r\n}';
+				fs.writeFile(phpProcessConf, _server, function (err) {
+					if (err) {
+						return _console(err);
+					}
+					setTimeout(function () {
+						_console('Starting PHP OK');
+						_checkPHPProcess();
+					}, 200);
+				});
+			} else {
+				_console('PHP is starting');
+			}
+		});
+
+
+	}
+
+	function _phpStopBtn() {
+		_checkProcess(phpBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(phpBin)) {
+				_stat('php-running', 'load');
+				_exec(phpStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_console('Stopping PHP OK');
+						_checkPHPProcess();
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_console('PHP is stopping');
+			}
+		});
+
+	}
+
+	function _phpRestartBtn() {
+		_checkProcess(phpBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(phpBin)) {
+				_stat('php-running', 'load');
+				_exec(phpStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_console('Stopping PHP OK');
+						_phpStartBtn();
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_stat('php-running', 'load');
+				_phpStartBtn();
+			}
+		});
+	}
+
+	function _mysqlStartBtn() {
+		_checkProcess(mysqlBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (!stdout.match(mysqlBin)) {
+				_stat('mysql-running', 'load');
+				_exec(mysqlStartCmd, function (err, stdout, stderr) {
+					if (err) {
+						return _console(err);
+					}
+					setTimeout(function () {
+						_console('Starting Mysql OK');
+						_checkMysqlProcess();
+					}, 200);
+				});
+			} else {
+				_console('Mysql is starting');
+			}
+		});
+
+	}
+
+	function _mysqlStopBtn() {
+		_checkProcess(mysqlBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(mysqlBin)) {
+				_stat('mysql-running', 'load');
+				_exec(mysqlStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_console('Stopping Mysql OK');
+						_checkMysqlProcess();
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_console('Mysql is stopping');
+			}
+		});
+	}
+
+	function _mysqlRestartBtn() {
+		_checkProcess(mysqlBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(mysqlBin)) {
+				_stat('mysql-running', 'load');
+				_exec(mysqlStopCmd, function (err, stdout, stderr) {
+					setTimeout(function () {
+						_mysqlStartBtn();
+					}, 200);
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_stat('mysql-running', 'load');
+				_mysqlStartBtn();
+			}
+		});
+
+
+	}
+
+	function _mysqlCmd() {
+		_checkProcess(mysqlBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(mysqlBin)) {
+				_console('Open mysql client');
+				_exec(mysqlCmd, function (err, stdout, stderr) {
+					if (err) {
+						return _console(err);
+					}
+				});
+			} else {
+				_console('Mysql is stopping');
+			}
+		});
+
+	}
+
+	function _checkNginxProcess() {
+		_stat('nginx-running', 'load');
+		_checkProcess(nginxBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(nginxBin)) {
+				_console('Nginx is Running');
+				_stat('nginx-running', 'run');
+			} else {
+				_console('Nginx is Stopping');
+				_stat('nginx-running', 'stop');
+			}
+		});
+	}
+
+	function _checkPHPProcess() {
+		_stat('php-running', 'load');
+		_checkProcess(phpBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(phpBin)) {
+				_console('PHP is Running');
+				_stat('php-running', 'run');
+			} else {
+				_console('PHP is Stopping');
+				_stat('php-running', 'stop');
+			}
+		});
+	}
+
+	function _checkMysqlProcess() {
+		_stat('mysql-running', 'load');
+		_checkProcess(mysqlBin, function (err, stdout, stderr) {
+			if (err) {
+				return _console(err);
+			}
+			if (stdout.match(mysqlBin)) {
+				_console('Mysql is Running');
+				_stat('mysql-running', 'run');
+			} else {
+				_console('Mysql is Stopping');
+				_stat('mysql-running', 'stop');
+			}
+		});
+	}
+
+	function _controlInit() {
+		_console('Wnmp Initiate');
+
+		_loadInI();
+
+		document.getElementById('nginx-start').onclick = _nginxStartBtn;
+		document.getElementById('nginx-stop').onclick = _nginxStopBtn;
+		document.getElementById('nginx-restart').onclick = _nginxRestartBtn;
+		document.getElementById('nginx-test').onclick = _nginxTestBtn;
+
+		document.getElementById('php-start').onclick = _phpStartBtn;
+		document.getElementById('php-stop').onclick = _phpStopBtn;
+		document.getElementById('php-restart').onclick = _phpRestartBtn;
+
+		document.getElementById('mysql-start').onclick = _mysqlStartBtn;
+		document.getElementById('mysql-stop').onclick = _mysqlStopBtn;
+		document.getElementById('mysql-restart').onclick = _mysqlRestartBtn;
+		document.getElementById('mysql-cmd').onclick = _mysqlCmd;
+
+		_checkNginxProcess();
+		_checkPHPProcess();
+		_checkMysqlProcess();
+
+	}
+
+	_controlInit();
+</script>
+
+</html>

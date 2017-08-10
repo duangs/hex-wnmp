@@ -1,0 +1,26 @@
+140322 19:18:54 [Note] Event Scheduler: Loaded 0 events
+140322 19:18:54 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: ready for connections.
+Version: '5.5.36-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+140322 19:20:06 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: Normal shutdown
+
+140322 19:20:06 [Note] Event Scheduler: Purging the queue. 0 events
+140727 12:30:02 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140727 12:30:02 [Note] Event Scheduler: Loaded 0 events
+140727 12:30:02 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140727 12:30:02 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.11-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+140727 12:30:23 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140727 12:30:23 [Note] Event Scheduler: Purging the queue. 0 events
+140730  7:43:54 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140730  7:43:54 [Note] Event Scheduler: Loaded 0 events
+140730  7:43:54 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140730  7:43:54 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.12-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+140730  7:44:50 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140730  7:44:50 [Note] Event Scheduler: Purging the queue. 0 events
+141219 16:03:07 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+141219 16:03:07 [Note] Event Scheduler: Loaded 0 events
+141219 16:03:07 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+141219 16:03:07 [Note] C:\Wnmp/mariadb/bin/mysql

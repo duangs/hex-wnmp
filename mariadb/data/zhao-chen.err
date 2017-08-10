@@ -1,0 +1,298 @@
+151008  9:53:12 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+151008  9:53:12 [Note] InnoDB: The InnoDB memory heap is disabled
+151008  9:53:12 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151008  9:53:12 [Note] InnoDB: Memory barrier is not used
+151008  9:53:12 [Note] InnoDB: Compressed tables use zlib 1.2.3
+151008  9:53:13 [Note] InnoDB: Not using CPU crc32 instructions
+151008  9:53:13 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+151008  9:53:13 [Note] InnoDB: Completed initialization of buffer pool
+151008  9:53:13 [Note] InnoDB: The first specified data file .\ibdata1 did not exist: a new database to be created!
+151008  9:53:13 [Note] InnoDB: Setting file .\ibdata1 size to 12 MB
+151008  9:53:13 [Note] InnoDB: Database physically writes the file full: wait...
+151008  9:53:13 [Note] InnoDB: Setting log file .\ib_logfile101 size to 48 MB
+151008  9:53:13 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+151008  9:53:13 [Note] InnoDB: The InnoDB memory heap is disabled
+151008  9:53:13 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151008  9:53:13 [Note] InnoDB: Memory barrier is not used
+151008  9:53:13 [Note] InnoDB: Compressed tables use zlib 1.2.3
+151008  9:53:13 [Note] InnoDB: Not using CPU crc32 instructions
+151008  9:53:13 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+151008  9:53:13 [Note] InnoDB: Completed initialization of buffer pool
+151008  9:53:13 [Note] InnoDB: Setting log file .\ib_logfile1 size to 48 MB
+151008  9:53:13 [Note] InnoDB: Restoring page 0 of tablespace 0
+151008  9:53:13 [Warning] InnoDB: Doublewrite does not have page_no=0 of space: 0
+151008  9:53:13 [ERROR] InnoDB: space header page consists of zero bytes in data file .\ibdata1
+151008  9:53:13 [ERROR] InnoDB: Could not open or create the system tablespace. If you tried to add new data files to the system tablespace, and it failed here, you should now edit innodb_data_file_path in my.cnf back to what it was, and remove the new ibdata files InnoDB created in this failed attempt. InnoDB only wrote those files full of zeros, but did not yet use them in any way. But be careful: do not remove old data files which contain your precious data!
+151008  9:53:13 [ERROR] Plugin 'InnoDB' init function returned error.
+151008  9:53:13 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+151008  9:53:13 [Note] Plugin 'FEEDBACK' is disabled.
+151008  9:53:14 [ERROR] Unknown/unsupported storage engine: InnoDB
+151008  9:53:14 [ERROR] Aborting
+
+2015-10-08 09:53:14 19b0  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+151008  9:53:14 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Shutdown complete
+
+151008  9:53:24 [Note] InnoDB: Renaming log file .\ib_logfile101 to .\ib_logfile0
+151008  9:53:24 [Warning] InnoDB: New log files created, LSN=45781
+151008  9:53:24 [Note] InnoDB: Doublewrite buffer not found: creating new
+151008  9:53:24 [Note] InnoDB: Doublewrite buffer created
+151008  9:53:24 [Note] InnoDB: 128 rollback segment(s) are active.
+151008  9:53:24 [Warning] InnoDB: Creating foreign key constraint system tables.
+151008  9:53:24 [Note] InnoDB: Foreign key constraint system tables created
+151008  9:53:24 [Note] InnoDB: Creating tablespace and datafile system tables.
+151008  9:53:24 [Note] InnoDB: Tablespace and datafile system tables created.
+151008  9:53:24 [Note] InnoDB: Waiting for purge to start
+151008  9:53:24 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.22-72.0 started; log sequence number 0
+151008  9:53:24 [Note] Plugin 'FEEDBACK' is disabled.
+151008  9:53:24 [Note] Server socket created on IP: '::'.
+151008  9:53:24 [Warning] 'host' entry '40322 19:18:54 [Note] Event Scheduler: Loaded 0 events
+140322 19:18:54 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: ready for connections.
+Version: '5.5.36-MariaDB'  socket: ''  port:|3306  mariadb.org binary distribution
+140322 19:20:06 [note] c:\wnmp\mariadb\bin\mysqld.exe: normal shutdown
+
+140322 19:20:06 [note] event scheduler: purging the queue. 0 events
+140727 12:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'host' entry 'ng system table mysql.roles_mapping; please run mysql_upgrade to create it
+140727 12:30:02 [Note] Event Scheduler: Loaded 0 events
+140727 12:30:02 [Warning] Failed to load slave|replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140727 12:30:02 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready for connections.
+version: '10' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'host' entry 'ket: ''  port: 3306  mariadb.org binary distribution
+140727 12:30:23 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140727 12:30:23 [Note] Event Scheduler: Purging the|queue. 0 events
+140730  7:43:54 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140730  7:43:54 [note] event scheduler: loaded 0 events
+140730  7:43:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'host' entry ' to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140730  7:43:54 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for| connections.
+version: '10.0.12-mariadb'  socket: ''  port: 3306  mariadb.org binary distribution
+140730  7:44:50 [note] d:\wnmp/mariadb/bin/mysqld.exe: normal shutdown
+
+140730  7:44:50 [n' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'host' entry 'r: Purging the queue. 0 events
+141219 16:03:07 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+141219 16:03:07 [Note] Event Scheduler: Loa|ded 0 events
+141219 16:03:07 [warning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+141219 16:03:07 [note] c:\wnmp' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'db' entry 'rning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140823 11:10:10 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready fo r connections.
+Version: '10.0.12-MariaDB'  sock@40823 11:10:10 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140823 11:10:10 [Note] Event Scheduler: Loaded 0 events
+140823 11:10:10 [Wa' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [Warning] 'db' entry '28 16:52:55 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140828 16:52:55 [note] event scheduler: loaded 0 events
+140828 16:52:55 [warning] failed t o load slave replication state from table mysql.@mariadb.org binary distribution
+140823 11:14:33 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140823 11:14:33 [Note] Event Scheduler: Purging the queue. 0 events
+1408' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151008  9:53:24 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+151008  9:53:24 [Note] Event Scheduler: Loaded 0 events
+151008  9:53:24 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+151008  9:53:24 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.17-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+151021 13:16:39 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+151021 13:16:39 [Note] InnoDB: The InnoDB memory heap is disabled
+151021 13:16:39 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151021 13:16:39 [Note] InnoDB: Memory barrier is not used
+151021 13:16:39 [Note] InnoDB: Compressed tables use zlib 1.2.3
+151021 13:16:39 [Note] InnoDB: Not using CPU crc32 instructions
+151021 13:16:39 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+151021 13:16:39 [Note] InnoDB: Completed initialization of buffer pool
+151021 13:16:39 [Note] InnoDB: Highest supported file format is Barracuda.
+151021 13:16:39 [Note] InnoDB: The log sequence numbers 0 and 0 in ibdata files do not match the log sequence number 1600607 in the ib_logfiles!
+151021 13:16:39 [Note] InnoDB: Database was not shutdown normally!
+151021 13:16:39 [Note] InnoDB: Starting crash recovery.
+151021 13:16:39 [Note] InnoDB: Reading tablespace information from the .ibd files...
+151021 13:16:39 [Note] InnoDB: Restoring possible half-written data pages 
+151021 13:16:39 [Note] InnoDB: from the doublewrite buffer...
+151021 13:16:39 [Note] InnoDB: 128 rollback segment(s) are active.
+151021 13:16:39 [Note] InnoDB: Waiting for purge to start
+151021 13:16:39 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.22-72.0 started; log sequence number 1600607
+151021 13:16:39 [Note] Plugin 'FEEDBACK' is disabled.
+151021 13:16:40 [Note] Server socket created on IP: '::'.
+151021 13:16:40 [Warning] 'host' entry '40322 19:18:54 [Note] Event Scheduler: Loaded 0 events
+140322 19:18:54 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: ready for connections.
+Version: '5.5.36-MariaDB'  socket: ''  port:|3306  mariadb.org binary distribution
+140322 19:20:06 [note] c:\wnmp\mariadb\bin\mysqld.exe: normal shutdown
+
+140322 19:20:06 [note] event scheduler: purging the queue. 0 events
+140727 12:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'host' entry 'ng system table mysql.roles_mapping; please run mysql_upgrade to create it
+140727 12:30:02 [Note] Event Scheduler: Loaded 0 events
+140727 12:30:02 [Warning] Failed to load slave|replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140727 12:30:02 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready for connections.
+version: '10' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'host' entry 'ket: ''  port: 3306  mariadb.org binary distribution
+140727 12:30:23 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140727 12:30:23 [Note] Event Scheduler: Purging the|queue. 0 events
+140730  7:43:54 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140730  7:43:54 [note] event scheduler: loaded 0 events
+140730  7:43:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'host' entry ' to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140730  7:43:54 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for| connections.
+version: '10.0.12-mariadb'  socket: ''  port: 3306  mariadb.org binary distribution
+140730  7:44:50 [note] d:\wnmp/mariadb/bin/mysqld.exe: normal shutdown
+
+140730  7:44:50 [n' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'host' entry 'r: Purging the queue. 0 events
+141219 16:03:07 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+141219 16:03:07 [Note] Event Scheduler: Loa|ded 0 events
+141219 16:03:07 [warning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+141219 16:03:07 [note] c:\wnmp' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'db' entry 'rning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140823 11:10:10 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready fo r connections.
+Version: '10.0.12-MariaDB'  sock@40823 11:10:10 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140823 11:10:10 [Note] Event Scheduler: Loaded 0 events
+140823 11:10:10 [Wa' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [Warning] 'db' entry '28 16:52:55 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140828 16:52:55 [note] event scheduler: loaded 0 events
+140828 16:52:55 [warning] failed t o load slave replication state from table mysql.@mariadb.org binary distribution
+140823 11:14:33 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140823 11:14:33 [Note] Event Scheduler: Purging the queue. 0 events
+1408' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151021 13:16:40 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+151021 13:16:40 [Note] Event Scheduler: Loaded 0 events
+151021 13:16:40 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+151021 13:16:40 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.17-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+151215 10:40:31 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+151215 10:40:31 [Note] InnoDB: The InnoDB memory heap is disabled
+151215 10:40:31 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+151215 10:40:31 [Note] InnoDB: Memory barrier is not used
+151215 10:40:31 [Note] InnoDB: Compressed tables use zlib 1.2.3
+151215 10:40:31 [Note] InnoDB: Not using CPU crc32 instructions
+151215 10:40:31 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+151215 10:40:31 [Note] InnoDB: Completed initialization of buffer pool
+151215 10:40:31 [Note] InnoDB: Highest supported file format is Barracuda.
+151215 10:40:31 [Note] InnoDB: The log sequence numbers 0 and 0 in ibdata files do not match the log sequence number 1600617 in the ib_logfiles!
+151215 10:40:32 [Note] InnoDB: Database was not shutdown normally!
+151215 10:40:32 [Note] InnoDB: Starting crash recovery.
+151215 10:40:32 [Note] InnoDB: Reading tablespace information from the .ibd files...
+151215 10:40:32 [Note] InnoDB: Restoring possible half-written data pages 
+151215 10:40:32 [Note] InnoDB: from the doublewrite buffer...
+151215 10:40:32 [Note] InnoDB: 128 rollback segment(s) are active.
+151215 10:40:32 [Note] InnoDB: Waiting for purge to start
+151215 10:40:32 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.22-72.0 started; log sequence number 1600617
+151215 10:40:32 [Note] Plugin 'FEEDBACK' is disabled.
+151215 10:40:32 [Note] Server socket created on IP: '::'.
+151215 10:40:32 [Warning] 'host' entry '40322 19:18:54 [Note] Event Scheduler: Loaded 0 events
+140322 19:18:54 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: ready for connections.
+Version: '5.5.36-MariaDB'  socket: ''  port:|3306  mariadb.org binary distribution
+140322 19:20:06 [note] c:\wnmp\mariadb\bin\mysqld.exe: normal shutdown
+
+140322 19:20:06 [note] event scheduler: purging the queue. 0 events
+140727 12:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'host' entry 'ng system table mysql.roles_mapping; please run mysql_upgrade to create it
+140727 12:30:02 [Note] Event Scheduler: Loaded 0 events
+140727 12:30:02 [Warning] Failed to load slave|replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140727 12:30:02 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready for connections.
+version: '10' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'host' entry 'ket: ''  port: 3306  mariadb.org binary distribution
+140727 12:30:23 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140727 12:30:23 [Note] Event Scheduler: Purging the|queue. 0 events
+140730  7:43:54 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140730  7:43:54 [note] event scheduler: loaded 0 events
+140730  7:43:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'host' entry ' to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140730  7:43:54 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for| connections.
+version: '10.0.12-mariadb'  socket: ''  port: 3306  mariadb.org binary distribution
+140730  7:44:50 [note] d:\wnmp/mariadb/bin/mysqld.exe: normal shutdown
+
+140730  7:44:50 [n' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'host' entry 'r: Purging the queue. 0 events
+141219 16:03:07 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+141219 16:03:07 [Note] Event Scheduler: Loa|ded 0 events
+141219 16:03:07 [warning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+141219 16:03:07 [note] c:\wnmp' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'db' entry 'rning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140823 11:10:10 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready fo r connections.
+Version: '10.0.12-MariaDB'  sock@40823 11:10:10 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140823 11:10:10 [Note] Event Scheduler: Loaded 0 events
+140823 11:10:10 [Wa' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [Warning] 'db' entry '28 16:52:55 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140828 16:52:55 [note] event scheduler: loaded 0 events
+140828 16:52:55 [warning] failed t o load slave replication state from table mysql.@mariadb.org binary distribution
+140823 11:14:33 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140823 11:14:33 [Note] Event Scheduler: Purging the queue. 0 events
+1408' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+151215 10:40:32 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+151215 10:40:32 [Note] Event Scheduler: Loaded 0 events
+151215 10:40:32 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+151215 10:40:32 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.17-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+160331 14:11:08 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+160331 14:11:08 [Note] InnoDB: The InnoDB memory heap is disabled
+160331 14:11:08 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+160331 14:11:08 [Note] InnoDB: Memory barrier is not used
+160331 14:11:08 [Note] InnoDB: Compressed tables use zlib 1.2.3
+160331 14:11:08 [Note] InnoDB: Not using CPU crc32 instructions
+160331 14:11:08 [Note] InnoDB: Initializing buffer pool, size = 128.0M
+160331 14:11:08 [Note] InnoDB: Completed initialization of buffer pool
+160331 14:11:08 [Note] InnoDB: Highest supported file format is Barracuda.
+160331 14:11:08 [Note] InnoDB: The log sequence numbers 0 and 0 in ibdata files do not match the log sequence number 1600627 in the ib_logfiles!
+160331 14:11:08 [Note] InnoDB: Database was not shutdown normally!
+160331 14:11:08 [Note] InnoDB: Starting crash recovery.
+160331 14:11:08 [Note] InnoDB: Reading tablespace information from the .ibd files...
+160331 14:11:08 [Note] InnoDB: Restoring possible half-written data pages 
+160331 14:11:08 [Note] InnoDB: from the doublewrite buffer...
+160331 14:11:08 [Note] InnoDB: 128 rollback segment(s) are active.
+160331 14:11:08 [Note] InnoDB: Waiting for purge to start
+160331 14:11:08 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.22-72.0 started; log sequence number 1600627
+160331 14:11:08 [Note] Plugin 'FEEDBACK' is disabled.
+160331 14:11:08 [Note] Server socket created on IP: '::'.
+160331 14:11:08 [Warning] 'host' entry '40322 19:18:54 [Note] Event Scheduler: Loaded 0 events
+140322 19:18:54 [Note] C:\Wnmp\mariadb\bin\mysqld.exe: ready for connections.
+Version: '5.5.36-MariaDB'  socket: ''  port:|3306  mariadb.org binary distribution
+140322 19:20:06 [note] c:\wnmp\mariadb\bin\mysqld.exe: normal shutdown
+
+140322 19:20:06 [note] event scheduler: purging the queue. 0 events
+140727 12:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'host' entry 'ng system table mysql.roles_mapping; please run mysql_upgrade to create it
+140727 12:30:02 [Note] Event Scheduler: Loaded 0 events
+140727 12:30:02 [Warning] Failed to load slave|replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140727 12:30:02 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready for connections.
+version: '10' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'host' entry 'ket: ''  port: 3306  mariadb.org binary distribution
+140727 12:30:23 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140727 12:30:23 [Note] Event Scheduler: Purging the|queue. 0 events
+140730  7:43:54 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140730  7:43:54 [note] event scheduler: loaded 0 events
+140730  7:43:' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'host' entry ' to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140730  7:43:54 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for| connections.
+version: '10.0.12-mariadb'  socket: ''  port: 3306  mariadb.org binary distribution
+140730  7:44:50 [note] d:\wnmp/mariadb/bin/mysqld.exe: normal shutdown
+
+140730  7:44:50 [n' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'host' entry 'r: Purging the queue. 0 events
+141219 16:03:07 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+141219 16:03:07 [Note] Event Scheduler: Loa|ded 0 events
+141219 16:03:07 [warning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+141219 16:03:07 [note] c:\wnmp' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'db' entry 'rning] failed to load slave replication state from table mysql.gtid_slave_pos: 1146: table 'mysql.gtid_slave_pos' doesn't exist
+140823 11:10:10 [note] d:\wnmp/mariadb/bin/mysqld.exe: ready fo r connections.
+Version: '10.0.12-MariaDB'  sock@40823 11:10:10 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140823 11:10:10 [Note] Event Scheduler: Loaded 0 events
+140823 11:10:10 [Wa' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [Warning] 'db' entry '28 16:52:55 [error] missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140828 16:52:55 [note] event scheduler: loaded 0 events
+140828 16:52:55 [warning] failed t o load slave replication state from table mysql.@mariadb.org binary distribution
+140823 11:14:33 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140823 11:14:33 [Note] Event Scheduler: Purging the queue. 0 events
+1408' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+160331 14:11:08 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+160331 14:11:08 [Note] Event Scheduler: Loaded 0 events
+160331 14:11:08 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+160331 14:11:08 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.17-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution

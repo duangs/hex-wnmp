@@ -1,0 +1,11 @@
+ÿ%                                                                                                                                                                                   test                                                                                                                                                                                                                                            ÿ%                                                                                                                                                                                   test\_%                                                                                                                                                                                                                                         ÿ%                                                                                                                                                                                   phpmyadmin                                                                                                                                                                                      phpmyadmin                                      140823 11:10:10 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140823 11:10:10 [Note] Event Scheduler: Loaded 0 events
+140823 11:10:10 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 1146: Table 'mysql.gtid_slave_pos' doesn't exist
+140823 11:10:10 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: ready for connections.
+Version: '10.0.12-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+140823 11:14:33 [Note] D:\Wnmp/mariadb/bin/mysqld.exe: Normal shutdown
+
+140823 11:14:33 [Note] Event Scheduler: Purging the queue. 0 events
+140828 16:52:55 [ERROR] Missing system table mysql.roles_mapping; please run mysql_upgrade to create it
+140828 16:52:55 [Note] Event Scheduler: Loaded 0 events
+140828 16:52:55 [Warning] Failed to load slave replication state from table mysql.gtid_slave_pos: 114

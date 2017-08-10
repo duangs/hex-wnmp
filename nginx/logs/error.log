@@ -1,0 +1,169 @@
+2017/06/06 16:48:31 [emerg] 3300#5568: CreateFile() "nginx/nginx\conf\nginx.conf" failed (3: The system cannot find the path specified)
+2017/06/06 16:59:49 [emerg] 9840#5748: unexpected end of file, expecting ";" or "}" in D:\_wnmp\nginx/conf/php_processes.conf:7
+2017/06/06 17:53:16 [emerg] 7876#11548: host not found in upstream "weight=1" in D:\_wnmp\bin\..\nginx/conf/php_processes.conf:2
+2017/06/06 17:55:37 [emerg] 7572#12052: host not found in upstream "weight=1" in D:\_wnmp\bin\..\nginx/conf/php_processes.conf:2
+2017/06/07 10:39:29 [emerg] 8576#11388: no servers are inside upstream in D:\_wnmp\nginx/conf/php_processes.conf:2
+2017/06/07 10:40:36 [emerg] 9220#3052: no servers are inside upstream in D:\_wnmp\nginx/conf/php_processes.conf:2
+2017/06/07 15:35:43 [notice] 13196#11056: signal process started
+2017/06/07 15:35:50 [notice] 5028#10664: signal process started
+2017/06/07 15:38:15 [notice] 12060#12996: signal process started
+2017/06/07 15:38:18 [notice] 11688#9788: signal process started
+2017/06/07 15:42:57 [notice] 11324#13100: signal process started
+2017/06/07 16:05:13 [notice] 13132#3412: signal process started
+2017/06/07 16:07:18 [notice] 4496#10112: signal process started
+2017/06/07 17:26:50 [notice] 2640#6228: signal process started
+2017/06/08 09:23:50 [emerg] 7156#12564: unexpected ";" in D:\_wnmp\nginx\conf\nginx.conf:55
+2017/06/08 09:24:06 [emerg] 11208#5756: unexpected ";" in D:\_wnmp\nginx\conf\nginx.conf:55
+2017/06/08 09:24:23 [emerg] 11836#12872: unexpected ";" in D:\_wnmp\nginx\conf\nginx.conf:55
+2017/06/08 09:33:11 [notice] 13072#12276: signal process started
+2017/06/08 09:41:36 [notice] 9580#5752: signal process started
+2017/06/08 15:11:32 [emerg] 7764#13604: invalid value "=" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:19:46 [emerg] 10796#4548: invalid value "=" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:19:49 [emerg] 14052#172: invalid value "=" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:20:00 [emerg] 7896#11672: invalid value "html/50x.html" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:20:04 [emerg] 9536#11356: invalid value "html/50x.html" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:20:18 [emerg] 11492#8564: invalid value "=" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:20:23 [emerg] 12596#3708: invalid value "/html/50x.html" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:20:56 [emerg] 11928#12964: invalid value "/50x.html" in D:\_wnmp\nginx\conf\nginx.conf:53
+2017/06/08 15:28:38 [emerg] 13896#4628: directive "error_page" is not terminated by ";" in D:\_wnmp\nginx\conf\nginx.conf:85
+2017/06/08 15:31:31 [emerg] 10692#8252: directive "error_page" is not terminated by ";" in D:\_wnmp\nginx\conf\nginx.conf:85
+2017/06/08 15:31:44 [notice] 7284#12008: signal process started
+2017/06/08 15:33:04 [notice] 4924#7156: signal process started
+2017/06/08 15:33:46 [emerg] 9740#13616: unexpected "}" in D:\_wnmp\nginx\conf\nginx.conf:89
+2017/06/08 15:33:52 [emerg] 11984#7448: invalid return code "index.html" in D:\_wnmp\nginx\conf\nginx.conf:88
+2017/06/08 15:34:47 [notice] 180#14096: signal process started
+2017/06/08 15:35:53 [emerg] 6160#13896: directive "error_page" is not terminated by ";" in D:\_wnmp\nginx\conf\nginx.conf:85
+2017/06/08 15:36:03 [notice] 13796#3456: signal process started
+2017/06/08 15:55:05 [emerg] 13120#5688: the size 10485760 of shared memory zone "addr" conflicts with already declared size 33554432 in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:55:55 [emerg] 11772#7572: the size 10485760 of shared memory zone "one" conflicts with already declared size 33554432 in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:56:09 [emerg] 5560#13248: limit_conn_zone "addr" is already bound to key "$binary_remote_addr" in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:57:21 [emerg] 12664#4304: invalid number of arguments in "limit_conn_zone" directive in D:\_wnmp\nginx\conf\nginx.conf:24
+2017/06/08 15:57:41 [emerg] 12544#6588: invalid number of arguments in "limit_conn_zone" directive in D:\_wnmp\nginx\conf\nginx.conf:24
+2017/06/08 15:57:47 [emerg] 3140#14252: invalid number of arguments in "limit_conn_zone" directive in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:57:51 [emerg] 13600#11424: invalid number of arguments in "limit_conn_zone" directive in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:57:56 [emerg] 10392#10288: limit_conn_zone "addr" is already bound to key "$binary_remote_addr" in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:58:05 [emerg] 11448#11804: invalid number of arguments in "limit_conn_zone" directive in D:\_wnmp\nginx\conf\nginx.conf:24
+2017/06/08 15:58:19 [emerg] 13568#3132: invalid zone size "zone=10m" in D:\_wnmp\nginx\conf\nginx.conf:24
+2017/06/08 15:58:41 [emerg] 13332#11660: limit_conn_zone "one" is already bound to key "$binary_remote_addr" in D:\_wnmp\nginx\conf\nginx.conf:25
+2017/06/08 15:59:14 [emerg] 8252#192: the shared memory zone "one" is already declared for a different use in D:\_wnmp\nginx\conf\nginx.conf:27
+2017/06/08 15:59:30 [emerg] 3140#4680: the shared memory zone "addr" is already declared for a different use in D:\_wnmp\nginx\conf\nginx.conf:27
+2017/06/08 16:00:13 [emerg] 11340#6696: the shared memory zone "one" is already declared for a different use in D:\_wnmp\nginx\conf\nginx.conf:27
+2017/06/08 16:01:06 [emerg] 10392#14004: the shared memory zone "addr" is already declared for a different use in D:\_wnmp\nginx\conf\nginx.conf:27
+2017/06/08 16:01:35 [emerg] 8720#13724: "server_names_hash_bucket_size" directive invalid number in D:\_wnmp\nginx\conf\nginx.conf:33
+2017/06/08 16:01:57 [emerg] 13728#7448: unknown directive "reset_timeout_connection" in D:\_wnmp\nginx\conf\nginx.conf:42
+2017/06/08 16:02:29 [emerg] 12996#13376: the shared memory zone "addr" is already declared for a different use in D:\_wnmp\nginx\conf\nginx.conf:27
+2017/06/08 16:04:37 [notice] 12784#12924: signal process started
+2017/06/08 16:09:04 [notice] 11652#12916: signal process started
+2017/06/09 10:41:45 [notice] 11932#13636: signal process started
+2017/06/09 11:07:38 [notice] 13104#6588: signal process started
+2017/06/09 11:08:13 [notice] 17456#8188: signal process started
+2017/06/09 11:08:26 [notice] 9312#7316: signal process started
+2017/06/12 14:49:19 [notice] 16516#13668: signal process started
+2017/06/20 15:30:42 [emerg] 11200#15764: directive "location" has no opening "{" in D:\_wnmp\nginx\conf\vhost/my.csf.check.chinascope.net.conf:19
+2017/06/20 15:30:53 [emerg] 14188#5708: directive "location" has no opening "{" in D:\_wnmp\nginx\conf\vhost/my.csf.check.chinascope.net.conf:19
+2017/07/03 15:16:37 [notice] 5776#12056: signal process started
+2017/07/03 15:16:37 [error] 5776#12056: OpenEvent("Global\ngx_reload_2668") failed (2: The system cannot find the file specified)
+2017/07/03 15:17:12 [notice] 12900#6700: signal process started
+2017/07/03 15:17:22 [notice] 12480#11312: signal process started
+2017/07/03 15:48:11 [notice] 13192#7948: signal process started
+2017/07/03 15:49:40 [notice] 7108#13132: signal process started
+2017/07/03 15:49:40 [error] 7108#13132: OpenEvent("Global\ngx_stop_2616") failed (2: The system cannot find the file specified)
+2017/07/03 15:49:43 [notice] 13252#12864: signal process started
+2017/07/03 15:49:43 [error] 13252#12864: OpenEvent("Global\ngx_stop_2616") failed (2: The system cannot find the file specified)
+2017/07/03 15:51:07 [notice] 1856#13056: signal process started
+2017/07/03 15:51:12 [notice] 1520#12976: signal process started
+2017/07/03 15:51:12 [error] 1520#12976: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 15:51:14 [notice] 2660#3324: signal process started
+2017/07/03 15:51:14 [error] 2660#3324: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 15:51:15 [notice] 8992#7764: signal process started
+2017/07/03 15:51:15 [error] 8992#7764: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 15:59:17 [notice] 12884#6392: signal process started
+2017/07/03 15:59:17 [error] 12884#6392: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:00:12 [notice] 4116#10488: signal process started
+2017/07/03 16:00:12 [error] 4116#10488: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:02:12 [notice] 12956#9284: signal process started
+2017/07/03 16:05:53 [notice] 12264#13204: signal process started
+2017/07/03 16:05:59 [notice] 5288#7280: signal process started
+2017/07/03 16:05:59 [error] 5288#7280: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:06:08 [notice] 12908#6284: signal process started
+2017/07/03 16:06:43 [notice] 12988#5980: signal process started
+2017/07/03 16:08:52 [notice] 13064#13000: signal process started
+2017/07/03 16:09:12 [notice] 7532#2888: signal process started
+2017/07/03 16:09:54 [notice] 9560#2284: signal process started
+2017/07/03 16:10:09 [notice] 11548#9656: signal process started
+2017/07/03 16:10:22 [notice] 7200#12520: signal process started
+2017/07/03 16:11:22 [notice] 2544#7376: signal process started
+2017/07/03 16:11:22 [error] 2544#7376: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:11:30 [notice] 10044#7332: signal process started
+2017/07/03 16:11:30 [error] 10044#7332: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:11:36 [notice] 11812#12976: signal process started
+2017/07/03 16:11:36 [error] 11812#12976: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:15:12 [notice] 8020#7292: signal process started
+2017/07/03 16:15:12 [error] 8020#7292: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:15:14 [notice] 7496#804: signal process started
+2017/07/03 16:15:14 [error] 7496#804: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:16:00 [notice] 12640#11428: signal process started
+2017/07/03 16:16:00 [error] 12640#11428: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:16:23 [notice] 13052#13192: signal process started
+2017/07/03 16:16:23 [error] 13052#13192: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:16:26 [notice] 10768#12972: signal process started
+2017/07/03 16:16:26 [error] 10768#12972: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:17:22 [notice] 7360#7004: signal process started
+2017/07/03 16:17:22 [error] 7360#7004: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:17:56 [notice] 12724#9196: signal process started
+2017/07/03 16:17:56 [error] 12724#9196: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:18:30 [notice] 6100#10892: signal process started
+2017/07/03 16:18:30 [error] 6100#10892: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:19:08 [notice] 12264#9444: signal process started
+2017/07/03 16:21:37 [notice] 10716#12908: signal process started
+2017/07/03 16:21:37 [error] 10716#12908: OpenEvent("Global\ngx_stop_12860") failed (2: The system cannot find the file specified)
+2017/07/03 16:21:45 [notice] 12540#12700: signal process started
+2017/07/03 16:21:45 [error] 12540#12700: OpenEvent("Global\ngx_stop_12860") failed (2: The system cannot find the file specified)
+2017/07/03 16:23:09 [notice] 3428#9784: signal process started
+2017/07/03 16:23:18 [notice] 11424#13080: signal process started
+2017/07/03 16:23:18 [error] 11424#13080: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:23:26 [notice] 12952#9684: signal process started
+2017/07/03 16:23:53 [notice] 2352#5780: signal process started
+2017/07/03 16:23:56 [notice] 8744#8940: signal process started
+2017/07/03 16:23:56 [error] 8744#8940: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:24:07 [notice] 13076#12772: signal process started
+2017/07/03 16:24:48 [notice] 10616#13132: signal process started
+2017/07/03 16:25:07 [notice] 12728#13096: signal process started
+2017/07/03 16:25:51 [notice] 13308#9744: signal process started
+2017/07/03 16:26:35 [notice] 4796#7252: signal process started
+2017/07/03 16:27:01 [notice] 13024#13092: signal process started
+2017/07/03 16:27:06 [notice] 12784#9132: signal process started
+2017/07/03 16:27:12 [notice] 9996#604: signal process started
+2017/07/03 16:27:16 [notice] 5884#13068: signal process started
+2017/07/03 16:27:16 [error] 5884#13068: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:27:23 [notice] 7796#7608: signal process started
+2017/07/03 16:48:51 [notice] 12744#9504: signal process started
+2017/07/03 16:49:13 [notice] 13036#5604: signal process started
+2017/07/03 16:49:26 [notice] 10220#7636: signal process started
+2017/07/03 16:50:04 [notice] 9964#7988: signal process started
+2017/07/03 16:50:09 [notice] 12264#10976: signal process started
+2017/07/03 16:50:14 [notice] 4456#4736: signal process started
+2017/07/03 16:50:21 [notice] 12372#1908: signal process started
+2017/07/03 16:50:37 [notice] 5084#6348: signal process started
+2017/07/03 16:50:37 [error] 5084#6348: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:52:37 [notice] 13080#4272: signal process started
+2017/07/03 16:52:37 [error] 13080#4272: CreateFile() "D:\document.root\my\wnmp\control/../nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 16:52:51 [notice] 9348#10224: signal process started
+2017/07/03 16:52:58 [notice] 7936#1744: signal process started
+2017/07/03 17:05:22 [notice] 12952#8992: signal process started
+2017/07/03 17:11:00 [notice] 12332#11436: signal process started
+2017/07/03 17:11:14 [notice] 6636#12380: signal process started
+2017/07/03 17:18:50 [notice] 11836#10916: signal process started
+2017/07/03 17:34:24 [notice] 7760#1436: signal process started
+2017/07/03 17:34:32 [notice] 8576#7320: signal process started
+2017/07/03 17:38:41 [notice] 12968#10992: signal process started
+2017/07/03 17:38:44 [notice] 12772#13008: signal process started
+2017/07/03 17:38:44 [error] 12772#13008: CreateFile() "D:\document.root\my\wnmp/nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 17:38:47 [notice] 11992#12764: signal process started
+2017/07/03 17:38:47 [error] 11992#12764: CreateFile() "D:\document.root\my\wnmp/nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 17:38:54 [notice] 9508#11172: signal process started
+2017/07/03 17:38:54 [error] 9508#11172: CreateFile() "D:\document.root\my\wnmp/nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/03 17:38:57 [notice] 13236#8236: signal process started
+2017/07/03 17:38:57 [error] 13236#8236: CreateFile() "D:\document.root\my\wnmp/nginx/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2017/07/04 09:32:41 [notice] 7728#8992: signal process started
+2017/07/04 10:41:59 [notice] 9952#2112: signal process started
